@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
+# ARQUIVO RESPONSÁVEL POR IGNORAR ARQUIVOS NA HORA DE SUBIR AO GIT HUB
+
+
 ### Django ###
 *.log
 *.pot
@@ -132,6 +135,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+# IMportante
 .env
 .venv
 env/

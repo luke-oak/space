@@ -17,3 +17,5 @@ django-admin help - mostra todos os comandos do django
 django-admin startproject (nome do projeto - adotar setup) .(para não criar outra pasta com o mesmo nome)
 
 python manage.py runserver - roda o servidor
+
+.

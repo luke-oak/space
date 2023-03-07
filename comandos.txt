@@ -1,0 +1,19 @@
+#Comandos para memorizar
+
+virtualenv nome(venv) - abre o ambiente virtual
+
+venv/Scripts/Activate - abre o ambiente virtual
+
+deactivate - fecha o ambiente virtual
+
+pip freeze - mostra todos os requisitos instalados para rodar a aplicação
+
+pip freeze > requirements.txt - cria arquivo txt com os requisitos
+
+pip install django - instala o django no ambiente virtual
+
+django-admin help - mostra todos os comandos do django
+
+django-admin startproject (nome do projeto - adotar setup) .(para não criar outra pasta com o mesmo nome)
+
+python manage.py runserver - roda o servidor

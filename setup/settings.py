@@ -11,11 +11,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path, os
+
+#DON PRETON
 #importando aquivo .env
 from dotenv import load_dotenv
 
 #carrega arquivo .env
 load_dotenv()
+#DON PRETON
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +29,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+#DON PRETON
 # Passando a chave secreta como uma variavel de ambiente e trazendo ela pro sistema
+
+
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
+#DON PRETON
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'galeria',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +71,7 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,7 +132,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+#DON PRETON
+#CRIANDO UMA URL
+#referência a arquivos estáticos localizados no STATIC_ROOT
+# define os locais adicionais que o aplicativo Staticfiles percorrerá se o localizador FileSystemFinder
 STATIC_URL = 'static/'
+
+#DEFININDO LOCAL DOS MEUS ARQUIVOS ESTATICOS
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'setup/static')
+]
+#DEFININDO ROOT DOS ARQUIVOS ESTATICOS
+#indica o caminho absoluto, onde o collectstatic coletará os arquivos estáticos.
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#DON PRETON
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

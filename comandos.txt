@@ -18,4 +18,6 @@ django-admin startproject (nome do projeto - adotar setup) .(para não criar out
 
 python manage.py runserver - roda o servidor
 
-.
+python manage.py help - mostra todas as funcionalidades do manage
+
+python manage.py startapp - cria um app dentro do seu projeto

@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from galeria.models import Fotografia
 
 ## DON PRETON
 #criando metodo para responder a requisição e abrir o link solicitado
@@ -7,15 +8,11 @@ from django.shortcuts import render
 
 def index(request):
     # DADOS DAS IMAGENS
-    dados = {
-        1:{"nome": "Nebulosa de Carina",
-         "legenda": "webtelescope.org / NASA/ James Webb"},
-        2:{"nome": "Galaxia NGC 1079", 
-        "legenda" : "nasa.org / NASA / Hubble"}
-    }
-    return render(request, 'galeria/index.html', {"cards" : dados} )
+    fotografias = Fotografia.objects.all()
+    return render(request, 'galeria/index.html', {"cards" : fotografias} )
 
 
-def imagem(request):
-    return render(request, 'galeria/imagem.html')
+def imagem(request, foto_id):
+    fotografia = get_object_or_404(Fotografia, pk=foto_id)
+    return render(request, 'galeria/imagem.html', {"fotografia": fotografia})
 

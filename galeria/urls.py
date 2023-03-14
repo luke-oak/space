@@ -9,7 +9,7 @@ from galeria.views import index, imagem
 urlpatterns = [
     path('', index, name='index'),
     #sempre que houver uma requisição de imagem quem atenderá será o arquivo 'imagem'
-    path('imagem.html/', imagem, name ='imagem')
+    path('imagem/<int:foto_id>', imagem, name ='imagem')
 ]
 
 # DON PRETON
